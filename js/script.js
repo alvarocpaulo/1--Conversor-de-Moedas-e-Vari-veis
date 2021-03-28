@@ -1,4 +1,4 @@
-let numeroSecreto = 3;
+let numeroSecreto = parseInt(Math.random() * 10);
 let tentativas = 3;
 
 while (tentativas > 0) {
@@ -8,13 +8,16 @@ while (tentativas > 0) {
       alert("Acertou!")
       break;
    } else if (chute > numeroSecreto) {
-      console.log("O número secreto é menor.")
+      alert("O número secreto é menor.")
       tentativas = tentativas - 1;
    } else if (chute < numeroSecreto) {
-      console.log("O número secreto é maior.");
+      alert("O número secreto é maior.");
       tentativas = tentativas - 1;
    } else {
-      console.log("Errou. O número secreto é " + numeroSecreto + ".");
+      alert("Errou. O número secreto é " + numeroSecreto + ".");
+   }
+
+   if (chute != numeroSecreto) {
+      alert("Acabou o jogo. O número secreto é " + numeroSecreto + ".");
    }
 }
-
