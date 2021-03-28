@@ -1,7 +1,21 @@
 "use strict";
 
-//let operacao = parseFloat(prompt("Digite 1 para fazer uma divisão, 2 para multiplicar, 3 para soma, 4 para subtração:"))
-var primeiroValor = parseFloat(prompt("Digite o primeiro valor:"));
-var segundoValor = parseFloat(prompt("Digite o segundo valor:"));
-resultado = primeiroValor + segundoValor;
-document.write("<h1>" + primeiroValor.toFixed(2) + " + " + segundoValor.toFixed(2) + " = " + resultado + "</h1>");
+var numeroSecreto = 3;
+var tentativas = 3;
+
+while (tentativas > 0) {
+  var chute = parseInt(prompt("Digite um número entre 0 e 10:"));
+
+  if (numeroSecreto == chute) {
+    alert("Acertou!");
+    break;
+  } else if (chute > numeroSecreto) {
+    console.log("O número secreto é menor.");
+    tentativas = tentativas - 1;
+  } else if (chute < numeroSecreto) {
+    console.log("O número secreto é maior.");
+    tentativas = tentativas - 1;
+  } else {
+    console.log("Errou. O número secreto é " + numeroSecreto + ".");
+  }
+}
